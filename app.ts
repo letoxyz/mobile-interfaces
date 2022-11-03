@@ -31,14 +31,14 @@ export type LetoAppStateStatus =
   | "extension";
 
 export interface ILetoAppChangeThemeEvent {
-  event: "change_theme";
+  type: "change_theme";
   payload: {
     theme: LetoAppTheme;
   };
 }
 
 export interface ILetoAppStateEvent {
-  event: "app_state";
+  type: "app_state";
   payload: {
     appState: LetoAppStateStatus;
   };
