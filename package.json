@@ -1,0 +1,8 @@
+{
+  "name": "mobile-interfaces",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "repository": "https://github.com/orgs/letoxyz/mobile-interfaces",
+  "author": "letoxyz",
+  "license": "MIT"
+}
