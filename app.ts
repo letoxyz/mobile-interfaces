@@ -1,4 +1,4 @@
-export enum HabticFeebbackTypes {
+export enum HapticFeedbackMethod {
   selection = "selection",
   impactLight = "impactLight",
   notificationSuccess = "notificationSuccess",
@@ -52,6 +52,8 @@ export interface ILetoAppInjected {
   initialTheme: LetoAppTheme;
   platform: LetoAppPlatform;
   safeAreaInsets: ISafeAreaInsets;
-  hapticFeedback: (type: HabticFeebbackTypes) => Promise<void>;
+  getClipboard: () => Promise<string>;
+  hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
+
   listen: (callback: (event: ILetoAppEvent) => void) => () => void;
 }
