@@ -30,6 +30,11 @@ export type LetoAppStateStatus =
   | "unknown"
   | "extension";
 
+export interface ILetoKeyboardAnimationData {
+  duration: number;
+  easing: string;
+}
+
 export interface ILetoAppChangeThemeEvent {
   type: "change_theme";
   payload: {
@@ -46,19 +51,14 @@ export interface ILetoAppStateEvent {
 
 export interface ILetoKeyboardDidShowEvent {
   type: "keyboard_did_show";
-  payload: {
+  payload: ILetoKeyboardAnimationData & {
     height: number;
-    duration: number;
-    easing: string;
   };
 }
 
 export interface ILetoKeyboardDidHideEvent {
   type: "keyboard_did_hide";
-  payload: {
-    duration: number;
-    easing: string;
-  };
+  payload: ILetoKeyboardAnimationData;
 }
 
 export type ILetoAppEvent =
@@ -73,6 +73,7 @@ export interface ILetoAppInjected {
   initialTheme: LetoAppTheme;
   platform: LetoAppPlatform;
   safeAreaInsets: ISafeAreaInsets;
+  initialKeyboardAnimationData: ILetoKeyboardAnimationData;
   getClipboard: () => Promise<string>;
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
 
