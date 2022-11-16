@@ -44,7 +44,28 @@ export interface ILetoAppStateEvent {
   };
 }
 
-export type ILetoAppEvent = ILetoAppChangeThemeEvent | ILetoAppStateEvent;
+export interface ILetoKeyboardDidShowEvent {
+  type: "keyboard_did_show";
+  payload: {
+    height: number;
+    duration: number;
+    easing: string;
+  };
+}
+
+export interface ILetoKeyboardDidHideEvent {
+  type: "keyboard_did_hide";
+  payload: {
+    duration: number;
+    easing: string;
+  };
+}
+
+export type ILetoAppEvent =
+  | ILetoAppChangeThemeEvent
+  | ILetoAppStateEvent
+  | ILetoKeyboardDidShowEvent
+  | ILetoKeyboardDidHideEvent;
 
 /** window.letoApp */
 export interface ILetoAppInjected {
