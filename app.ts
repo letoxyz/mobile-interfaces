@@ -76,6 +76,7 @@ export interface ILetoAppInjected {
   initialKeyboardAnimationData: ILetoKeyboardAnimationData;
   getClipboard: () => Promise<string>;
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
+  disconnect: () => Promise<void>;
 
   listen: (callback: (event: ILetoAppEvent) => void) => () => void;
 }
