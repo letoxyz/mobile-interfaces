@@ -61,11 +61,19 @@ export interface ILetoKeyboardDidHideEvent {
   payload: ILetoKeyboardAnimationData;
 }
 
+export interface ILetoAccessTokenUpdatedEvent {
+  type: "access_token_updated";
+  payload: {
+    accessToken: string;
+  };
+}
+
 export type ILetoAppEvent =
   | ILetoAppChangeThemeEvent
   | ILetoAppStateEvent
   | ILetoKeyboardDidShowEvent
-  | ILetoKeyboardDidHideEvent;
+  | ILetoKeyboardDidHideEvent
+  | ILetoAccessTokenUpdatedEvent;
 
 /** window.letoApp */
 export interface ILetoAppInjected {
@@ -74,6 +82,7 @@ export interface ILetoAppInjected {
   platform: LetoAppPlatform;
   safeAreaInsets: ISafeAreaInsets;
   initialKeyboardAnimationData: ILetoKeyboardAnimationData;
+  accessToken: string;
   getClipboard: () => Promise<string>;
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
   disconnect: () => Promise<void>;
