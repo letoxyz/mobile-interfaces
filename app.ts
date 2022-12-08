@@ -86,7 +86,8 @@ export interface ILetoAppInjected {
   getClipboard: () => Promise<string>;
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
   disconnect: () => Promise<void>;
-  openSettings(): Promise<void>;
+  openSettings: () => Promise<void>;
+  openAddPhone: () => Promise<void>;
 
   listen: (callback: (event: ILetoAppEvent) => void) => () => void;
 }
