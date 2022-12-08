@@ -93,6 +93,10 @@ export interface ILetoAppInjected {
    * returns false if user went back
    */
   openAddPhone: () => Promise<boolean>;
+  /**
+   * reload WebView
+   */
+  reload: () => void;
 
   listen: (callback: (event: ILetoAppEvent) => void) => () => void;
 }
