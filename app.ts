@@ -87,7 +87,12 @@ export interface ILetoAppInjected {
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
   disconnect: () => Promise<void>;
   openSettings: () => Promise<void>;
-  openAddPhone: () => Promise<void>;
+  /**
+   * returns true if phone was successfuly added
+   *
+   * returns false if user went back
+   */
+  openAddPhone: () => Promise<boolean>;
 
   listen: (callback: (event: ILetoAppEvent) => void) => () => void;
 }
