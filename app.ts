@@ -75,6 +75,29 @@ export type ILetoAppEvent =
   | ILetoKeyboardDidHideEvent
   | ILetoAccessTokenUpdatedEvent;
 
+export interface ILetoShareTextOptions {
+  type: "text";
+  message: string;
+  title?: string;
+}
+
+export interface ILetoShareImageOptions {
+  type: "image";
+  url: string;
+  title?: string;
+}
+
+export interface ILetoShareUrlOptions {
+  type: "url";
+  url: string;
+  title?: string;
+}
+
+export type ILetoShareOptions =
+  | ILetoShareTextOptions
+  | ILetoShareImageOptions
+  | ILetoShareUrlOptions;
+
 /** window.letoApp */
 export interface ILetoAppInjected {
   version: string;
@@ -97,6 +120,7 @@ export interface ILetoAppInjected {
    * reload WebView
    */
   reload: () => void;
+  share: (options: ILetoShareOptions) => Promise<void>;
 
   listen: (callback: (event: ILetoAppEvent) => void) => () => void;
 }
