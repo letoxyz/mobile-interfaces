@@ -83,7 +83,8 @@ export interface ILetoShareTextOptions {
 
 export interface ILetoShareImageOptions {
   type: "image";
-  url: string;
+  /** base64 image */
+  image: string;
   title?: string;
 }
 
