@@ -109,7 +109,7 @@ export interface ILetoAppInjected {
   getClipboard: () => Promise<string>;
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
   disconnect: () => Promise<void>;
-  openSettings: () => Promise<void>;
+  openDevMenu: () => Promise<void>;
   /**
    * returns true if phone was successfuly added
    *
