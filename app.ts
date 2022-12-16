@@ -11,6 +11,13 @@ export enum LetoAppPlatform {
   macos = "macos",
 }
 
+export interface LetoAppSystemVersion {
+  version: string;
+  major: number;
+  minor: number;
+  patch: number;
+}
+
 export enum LetoAppTheme {
   dark = "dark",
   light = "light",
@@ -104,6 +111,7 @@ export interface ILetoAppInjected {
   version: string;
   initialTheme: LetoAppTheme;
   platform: LetoAppPlatform;
+  systemVersion: LetoAppSystemVersion;
   safeAreaInsets: ISafeAreaInsets;
   initialKeyboardAnimationData: ILetoKeyboardAnimationData;
   accessToken: string;
