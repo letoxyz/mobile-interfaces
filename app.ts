@@ -75,12 +75,17 @@ export interface ILetoAccessTokenUpdatedEvent {
   };
 }
 
+export interface ILetoContactsUpdatedEvent {
+  type: "contacts_updated";
+}
+
 export type ILetoAppEvent =
   | ILetoAppChangeThemeEvent
   | ILetoAppStateEvent
   | ILetoKeyboardDidShowEvent
   | ILetoKeyboardDidHideEvent
-  | ILetoAccessTokenUpdatedEvent;
+  | ILetoAccessTokenUpdatedEvent
+  | ILetoContactsUpdatedEvent;
 
 export interface ILetoShareTextOptions {
   type: "text";
