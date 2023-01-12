@@ -23,6 +23,11 @@ export enum LetoAppTheme {
   light = "light",
 }
 
+export enum LetoAppWalletSource {
+  Import = "import",
+  Connect = "connect",
+}
+
 export interface ISafeAreaInsets {
   top: number;
   right: number;
@@ -120,6 +125,7 @@ export interface ILetoAppInjected {
   safeAreaInsets: ISafeAreaInsets;
   initialKeyboardAnimationData: ILetoKeyboardAnimationData;
   accessToken: string;
+  walletSource: LetoAppWalletSource;
   getClipboard: () => Promise<string>;
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
   disconnect: () => Promise<void>;
