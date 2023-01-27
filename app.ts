@@ -126,6 +126,7 @@ export interface ILetoAppInjected {
   initialKeyboardAnimationData: ILetoKeyboardAnimationData;
   accessToken: string;
   walletSource: LetoAppWalletSource;
+  refreshAccessToken: () => Promise<string>;
   getClipboard: () => Promise<string>;
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
   disconnect: () => Promise<void>;
