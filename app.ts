@@ -116,6 +116,17 @@ export type ILetoShareOptions =
   | ILetoShareImageOptions
   | ILetoShareUrlOptions;
 
+export type CodeScannerResponse =
+  | {
+      network: "ethereum";
+      address: string;
+      chain_id?: `${number}`;
+      function_name?: string;
+      prefix?: string;
+      parameters?: Record<string, string>;
+    }
+  | { network: "tron"; address: string };
+
 /** window.letoApp */
 export interface ILetoAppInjected {
   version: string;
@@ -131,6 +142,7 @@ export interface ILetoAppInjected {
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
   disconnect: () => Promise<void>;
   openDevMenu: () => Promise<void>;
+  openCodeScanner: () => Promise<CodeScannerResponse>;
   /**
    * returns true if phone was successfuly added
    *
