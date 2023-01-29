@@ -119,7 +119,7 @@ export type ILetoShareOptions =
 export type CodeScannerResponse =
   | {
       network: "ethereum";
-      address: string;
+      target_address: string;
       chain_id?: `${number}`;
       function_name?: string;
       prefix?: string;
