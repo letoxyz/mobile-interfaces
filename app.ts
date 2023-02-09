@@ -127,6 +127,15 @@ export type CodeScannerResponse =
     }
   | { network: "tron"; address: string };
 
+export interface ILetoAppPhoneContact {
+  recordID: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+}
+
+export type PhoneContactsResponse = ILetoAppPhoneContact[];
+
 /** window.letoApp */
 export interface ILetoAppInjected {
   version: string;
@@ -143,6 +152,10 @@ export interface ILetoAppInjected {
   disconnect: () => Promise<void>;
   openDevMenu: () => Promise<void>;
   openCodeScanner: () => Promise<CodeScannerResponse>;
+  /**
+   * Note: if app does not have access to contacts promise will be rejected
+   */
+  getPhoneContacts: () => Promise<PhoneContactsResponse>;
   /**
    * returns true if phone was successfuly added
    *
