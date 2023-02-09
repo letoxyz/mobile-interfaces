@@ -132,6 +132,7 @@ export interface ILetoAppPhoneContact {
   firstName: string;
   lastName: string;
   phone: string;
+  thumbnail: string | null;
 }
 
 export type PhoneContactsResponse = ILetoAppPhoneContact[];
