@@ -158,7 +158,14 @@ export interface ILetoAppInjected {
    * Note: if app does not have access to contacts promise will be rejected
    */
   getPhoneContacts: () => Promise<PhoneContactsResponse>;
+  /**
+   * if user sync contacts promise will be resolved, otherwise rejected
+   */
   requestContactsPermission: () => Promise<void>;
+  /**
+   * returns true if contacts pemission is authorized, otherwise returns false
+   */
+  checkContactsPermission: () => Promise<boolean>;
   openMnemonicBackup: () => Promise<void>;
   /**
    * returns true if phone was successfuly added
