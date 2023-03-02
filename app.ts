@@ -135,6 +135,16 @@ export interface ILetoAppPhoneContact {
   thumbnail: string | null;
 }
 
+export interface ILetoWalletListItem {
+  identifier: string;
+  name: string;
+  isMnemonic: boolean;
+  accounts: {
+    ethereum: string;
+  };
+  isActive: boolean;
+}
+
 export type PhoneContactsResponse = ILetoAppPhoneContact[];
 
 /** window.letoApp */
@@ -166,7 +176,10 @@ export interface ILetoAppInjected {
    * returns true if contacts pemission is authorized, otherwise returns false
    */
   checkContactsPermission: () => Promise<boolean>;
-  openMnemonicBackup: () => Promise<void>;
+  openMnemonicBackup: (address: string) => Promise<void>;
+  changeActiveAddress: (address: string) => Promise<void>;
+  addWallet: () => Promise<ILetoWalletListItem[]>;
+  getWalletList: () => Promise<ILetoWalletListItem[]>;
   /**
    * returns true if phone was successfuly added
    *
