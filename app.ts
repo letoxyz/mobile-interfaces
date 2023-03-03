@@ -177,7 +177,9 @@ export interface ILetoAppInjected {
    */
   checkContactsPermission: () => Promise<boolean>;
   openMnemonicBackup: (address: string) => Promise<void>;
+  openPrivateKeyBackup: (address: string) => Promise<void>;
   changeActiveAddress: (address: string) => Promise<void>;
+  forgetWallet: (address: string) => Promise<void>;
   addWallet: () => Promise<ILetoWalletListItem[]>;
   getWalletList: () => Promise<ILetoWalletListItem[]>;
   /**
