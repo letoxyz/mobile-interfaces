@@ -163,6 +163,7 @@ export interface ILetoAppInjected {
   hapticFeedback: (method: HapticFeedbackMethod) => Promise<void>;
   disconnect: () => Promise<void>;
   openDevMenu: () => Promise<void>;
+  openSupport: () => Promise<void>;
   openCodeScanner: () => Promise<CodeScannerResponse>;
   /**
    * Note: if app does not have access to contacts promise will be rejected
