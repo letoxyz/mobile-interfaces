@@ -164,6 +164,7 @@ export interface ILetoAppInjected {
   disconnect: () => Promise<void>;
   openDevMenu: () => Promise<void>;
   openSupport: () => Promise<void>;
+  openPrivacySettings: () => Promise<void>;
   openCodeScanner: () => Promise<CodeScannerResponse>;
   /**
    * Note: if app does not have access to contacts promise will be rejected
