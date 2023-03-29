@@ -147,6 +147,29 @@ export interface ILetoWalletListItem {
 
 export type PhoneContactsResponse = ILetoAppPhoneContact[];
 
+export enum ILetoInstalledAppId {
+  Trust = "trust",
+  MetaMask = "metamask",
+  Rainbow = "rainbow",
+  Zerion = "zerion",
+  CoinbaseWallet = "coinbase_wallet",
+  Binance = "binance",
+  Coinbase = "coinbase",
+}
+
+export enum ILetoInstalledAppType {
+  Exchange = "exchange",
+  Wallet = "wallet",
+}
+
+export interface ILetoInstalledApp {
+  id: ILetoInstalledAppId;
+  type: ILetoInstalledAppType;
+  name: string;
+}
+
+export type InstalledAppsResponse = ILetoInstalledApp[];
+
 /** window.letoApp */
 export interface ILetoAppInjected {
   version: string;
@@ -184,6 +207,8 @@ export interface ILetoAppInjected {
   forgetWallet: (address: string) => Promise<void>;
   addWallet: () => Promise<ILetoWalletListItem[]>;
   getWalletList: () => Promise<ILetoWalletListItem[]>;
+  getInstalledApps: () => Promise<InstalledAppsResponse>;
+  openAppTransferUrl: () => Promise<void>;
   /**
    * returns true if phone was successfuly added
    *
