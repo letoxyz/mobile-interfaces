@@ -208,7 +208,10 @@ export interface ILetoAppInjected {
   addWallet: () => Promise<ILetoWalletListItem[]>;
   getWalletList: () => Promise<ILetoWalletListItem[]>;
   getInstalledApps: () => Promise<InstalledAppsResponse>;
-  openAppTransferUrl: () => Promise<void>;
+  openAppTransferUrl: (
+    id: ILetoInstalledAppId,
+    address: string
+  ) => Promise<void>;
   /**
    * returns true if phone was successfuly added
    *
